@@ -1,0 +1,333 @@
+
+/* Указываем box sizing */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-Regular.eot');
+    src: local('☺'), url('../fonts/TTLakes-Regular.woff') format('woff'), url('../fonts/TTLakes-Regular.ttf') format('truetype'), url('../fonts/TTLakes-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-Medium.eot');
+    src: local('☺'), url('../fonts/TTLakes-Medium.woff') format('woff'), url('../fonts/TTLakes-Medium.ttf') format('truetype'), url('../fonts/TTLakes-Medium.svg') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TTLakes';
+    src: url('../fonts/TTLakes-Bold.eot');
+    src: local('☺'), url('../fonts/TTLakes-Bold.woff') format('woff'), url('../fonts/TTLakes-Bold.ttf') format('truetype'), url('../fonts/TTLakes-Bold.svg') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.header__container{
+    padding:20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu__list{
+    display: flex;
+    align-items: center;
+}
+.menu__link{
+    display: flex;
+    align-items: center;
+}
+.menu__item{
+    margin-right: 16px;
+}
+.menu__link li:last-child{
+    margin-right: 0;
+}
+.menu__separator{
+    content: '';
+    width: 2px;
+    height: 32px;
+    border-radius: 50%;
+    background: #EAEAEA;
+}
+.menu__item--invisible{
+    display: none;
+}
+.menu__list-separator{
+    display: none;
+}
+.main{
+    background-color: #F8F8F8;
+    padding-top: 4vw;
+}
+.title{
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.title__info{
+    font-family: 'TTLakes', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    color: #1B1C21;
+    margin-left: 3vw;
+}
+.title__info:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    border-radius: 0 50% 50% 0;
+    background: #41F6D7;
+    display: inline-block;
+    margin-left: -3vw;
+}
+.title__container--invisible{
+    display: flex;
+    margin-right: 3vw;
+}
+.title__item-link{
+    display: flex;
+    margin-right: 3vw;
+    text-decoration: none;
+}
+.title__item-text{
+    align-self: center;
+    margin-right: 8px;
+    font-family: 'TTLakes',sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #1B1C21;
+}
+
+.title__container--invisible:last-child{
+    margin: 0;
+}
+.title__container--invisible{
+    display: none;
+}
+.services-menu__container{
+    margin-left: 3vw;
+    margin-bottom: 24px;
+}
+.services-menu__list{
+    display: flex;
+    overflow: scroll;
+    white-space: nowrap;
+}
+.services-menu__item-link{
+    text-decoration: none;
+    font-family: 'TTLakes', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #7E7E82;
+    display: inline-block;
+    padding: 8px 17px 9px;
+}
+.services-menu__item-link--active{
+    background: #FFFFFF;
+    border: 2px solid #B8FFEC;
+    border-radius: 6px;
+}
+.description__container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.description__content{
+    margin-left: 3vw;
+    margin-right: 16px;
+    width: 100%;
+}
+.description__info{
+    margin-bottom: 16px;
+    max-height: 90px;
+    overflow: hidden;
+}
+.description__info-text{
+    margin-bottom: 20px;
+    font-family: 'TTLakes',sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1B1C21;
+}
+.description__info:last-child{
+    margin-bottom: 0;
+}
+.description__info-more{
+    margin-bottom: 16px;
+}
+.description__check{
+    padding-left: 32px;
+    font-family: 'TTLakes',sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1B1C21;
+}
+.description__check-input{
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.description__checkbox{
+    position: absolute;
+    margin-left: -32px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/expand.svg);
+}
+.description-logo{
+    width: 100%;
+    height: auto;
+}
+.description-logo__img{
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 780px) {
+    .menu__item--invisible{
+        display: block;
+    }
+    .menu__list-separator{
+        display: block;
+    }
+    .services__title{
+        margin-bottom: 32px;
+    }
+    .description__container {
+        margin-left: 3vw;
+        padding-right: 16px;
+        justify-content: space-between;
+    }
+    .description__content{
+        margin-left: 0;
+        margin-right: 0;
+        width: 47%;
+    }
+    .description__info{
+        max-height: 160px;
+    }
+    .description-logo{
+        width: 47%;
+        height: auto;
+    }
+    .menu__list-separator{
+        display: block;
+    }
+}
+@media (min-width: 1100px) {
+    .header{
+        display: none;
+    }
+    .title__container--invisible{
+        display: flex;
+    }
+    .services__title{
+        margin-bottom: 8px;
+    }
+    .services-menu__list{
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+}
+
